@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>Hello World</h1>
+<div>
+    <form action="/" method="POST">
+        <input type="text" name="todo" id="todo">
+        <input type="submit" value="Add Task">
+    </form>
+</div>
+
+<h3>Pending Tasks</h3>
+<table>
+    {% for task in taskList %}
+        <tr>
+            <td>
+                <p>{{ task }}</p>
+            </td>
+            <td>
+                <form action="/delete/{{ loop.index0 }} {{ val }}" method="POST">
+                    <input type="submit" name="delete" value="Delete">
+                    <input type="submit" name="done" value="Done">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<h3>Done Tasks</h3>
+<table>
+    {% for task in doneTasks %}
+        <tr>
+            <td>
+                <p>{{ task }}</p>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
 {% endblock %}
