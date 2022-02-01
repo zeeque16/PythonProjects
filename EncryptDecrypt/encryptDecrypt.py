@@ -1,5 +1,4 @@
 from cryptography.fernet import Fernet
-from rsa import decrypt
 
 message = "Hello Wolrd"
 
