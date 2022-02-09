@@ -46,7 +46,7 @@ def deL(no):
 			lines = f.readlines()
 			f.seek(0)
 			for i in lines:
-				if i.strip('\n') != d[no]:
+				if (i.strip('\n') != d[no]):
 					f.write(i)
 			f.truncate()
 		print(f"Deleted todo #{no}")
@@ -71,7 +71,7 @@ def done(no):
 			lines = f.readlines()
 			f.seek(0)
 			for i in lines:
-				if i.strip('\n') != d[no]:
+				if (i.strip('\n') != d[no]):
 					f.write(i)
 			f.truncate()
 	except:
